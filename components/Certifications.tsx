@@ -4,30 +4,30 @@ import Image from "next/image";
 const certifications = [
   {
     title: "AWS Cloud Solutions Architect",
-     img: "/images/aws.png",
+     img: "/images/certification/aws.png",
   },
   
   {
     title: "Full Stack Developer",
-     img: "/images/fullstack_developer.png",
+     img: "/images/certification/fullstack_developer.png",
   },
   {
     title: "Certified Ethical Hacker - CEH",
-     img: "/images/ethical_hacker.png",
+     img: "/images/certification/ethical_hacker.png",
   },
   {
     title: "Artificial Intelligence and Machine Learning",
-     img: "/images/ai_ml.png",
+     img: "/images/certification/ai_ml.png",
   },
 
   {
     title: "Google Cybersecuirty",
-     img: "/images/google_cybersecuirty.png",
+     img: "/images/certification/google_cybersecuirty.png",
   },
 
   {
     title: "Certified Information System Security Professional (CISSP)",
-    img: "/images/cissp.png",
+    img: "/images/certification/cissp.png",
   },
   
   
