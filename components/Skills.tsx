@@ -38,7 +38,8 @@ const ethicalHackingTools = [
 
 export default function Skills() {
   const renderCards = (items: { title: string; img: string }[]) => (
-    <div className="grid md:grid-cols-3 gap-6">
+    
+    <div className="grid md:grid-cols-3 gap-6  ">
       {items.map((skill) => (
         <div
           key={skill.title}
@@ -65,7 +66,7 @@ export default function Skills() {
   );
 
   return (
-    <section className="py-16">
+    <section  id="skills" className="py-16">
       <h2 className="text-3xl font-semibold mb-10 text-center">Skills</h2>
 
       {/* Programming Languages */}

@@ -18,7 +18,7 @@ export default function Navbar() {
 
         {/* Menu */}
         <nav className="hidden md:flex space-x-8 text-zinc-300 text-xl">
-          <Link href="#about" className="hover:text-white transition">About</Link>
+          <Link href="#hero" className="hover:text-white transition">About</Link>
           <Link href="#skills" className="hover:text-white transition">Skills</Link>
           <Link href="#certifications" className="hover:text-white transition">Certifications</Link>
           <Link href="#projects" className="hover:text-white transition">Projects</Link>

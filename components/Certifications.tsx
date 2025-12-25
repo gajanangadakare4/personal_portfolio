@@ -35,7 +35,7 @@ const certifications = [
 
 export default function Certifications() {
   return (
-    <section>
+    <section  id="certifications">
       <h2 className="text-3xl font-semibold mb-8 text-center">Certifications</h2>
       <div className="grid md:grid-cols-2 gap-6">
         {certifications.map((cert) => (

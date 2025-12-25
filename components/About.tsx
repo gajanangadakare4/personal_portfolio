@@ -2,7 +2,7 @@
 
 export default function About() {
   return (
-    <section>
+    <section  id="about">
       <h2 className="text-3xl font-semibold mb-6 text-center">
         About Me
       </h2>
