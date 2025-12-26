@@ -41,10 +41,12 @@ export default function Contact() {
 
   return (
     <section id="contact" className="pb-32">
+      {/* Section Title */}
       <h2 className="text-3xl font-semibold mb-12 text-center">
         Connect With Me
       </h2>
 
+      {/* Flip Cards */}
       <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {contacts.map((item, index) => (
           <div key={item.type} className="perspective">
@@ -59,7 +61,7 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
               className="relative h-40 w-full cursor-pointer transform-style-preserve-3d"
             >
-              {/* Front */}
+              {/* Front Side */}
               <div className="absolute inset-0 backface-hidden flex flex-col items-center justify-center rounded-xl border border-purple-800/40 bg-black/40">
                 <div className="text-3xl text-purple-400 mb-2">
                   {item.icon}
@@ -72,7 +74,7 @@ export default function Contact() {
                 </span>
               </div>
 
-              {/* Back */}
+              {/* Back Side */}
               <a
                 href={item.href}
                 target="_blank"
@@ -90,6 +92,17 @@ export default function Contact() {
           </div>
         ))}
       </div>
+
+      {/* Warrior Quote */}
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="mt-16 text-center text-lg md:text-xl text-zinc-300 font-medium italic"
+      >
+        “Code is my weapon,I fight bugs, break limits, and build systems that endure
+        on the battlefield of problems.”
+      </motion.p>
     </section>
   );
 }
