@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import {
   FaEnvelope,
   FaLinkedin,
@@ -36,28 +37,39 @@ const contacts = [
 ];
 
 export default function Contact() {
+  const [flipped, setFlipped] = useState<number | null>(null);
+
   return (
-    <section className="pb-32"  id="contact">
+    <section id="contact" className="pb-32">
       <h2 className="text-3xl font-semibold mb-12 text-center">
         Connect With Me
       </h2>
 
       <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        {contacts.map((item) => (
+        {contacts.map((item, index) => (
           <div key={item.type} className="perspective">
             <motion.div
+              onClick={() =>
+                setFlipped(flipped === index ? null : index)
+              }
+              animate={{
+                rotateY: flipped === index ? 180 : 0,
+              }}
               whileHover={{ rotateY: 180 }}
               transition={{ duration: 0.6 }}
-              className="relative h-40 w-full transform-style-preserve-3d"
+              className="relative h-40 w-full cursor-pointer transform-style-preserve-3d"
             >
               {/* Front */}
-              <div className="absolute inset-0 backface-hidden flex flex-col items-center justify-center rounded-xl border border-purple-800/40">
+              <div className="absolute inset-0 backface-hidden flex flex-col items-center justify-center rounded-xl border border-purple-800/40 bg-black/40">
                 <div className="text-3xl text-purple-400 mb-2">
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-medium text-slate-100">
                   {item.type}
                 </h3>
+                <span className="text-xs text-zinc-400 mt-1 md:hidden">
+                  Tap to view
+                </span>
               </div>
 
               {/* Back */}
@@ -71,7 +83,7 @@ export default function Contact() {
                   {item.value}
                 </p>
                 <span className="mt-2 text-xs text-purple-400">
-                  Click to open
+                  Open
                 </span>
               </a>
             </motion.div>

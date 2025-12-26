@@ -1,61 +1,51 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen w-full flex items-center pt-28">
-      <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center px-6">
-        {/* Profile Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="flex justify-center md:justify-end"
+    <section
+      className="relative w-full max-w-7xl min-h-[85vh] flex items-center justify-center overflow-hidden rounded-3xl"
+      style={{
+        backgroundImage: "url('/images/profile_1.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl px-6 text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9 }}
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white"
         >
-          <Image
-            src="/images/profile_1.png"
-            alt="Gajanan M Gadakare"
-            width={400}
-            height={300}
-            className="rounded-3xl shadow-xl "
-            priority
-          />
-        </motion.div>
+          Gajanan Gadakare
+        </motion.h1>
 
-        {/* Text Content */}
-        <div>
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-            className="text-4xl sm:text-5xl lg:text-5.9xl font-bold leading-tight"
-          >
-            Gajanan Gadakare
-          </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="mt-6 text-lg text-zinc-300 leading-relaxed"
+        >
+          Hands-on Full-Stack Developer with experience building scalable web
+          applications. Strong foundation in modern frontend and backend
+          technologies. Actively expanding expertise in Cybersecurity and AI/ML.
+          Passionate about leveraging cloud computing for secure, high-performance
+          solutions.
+        </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="mt-6 text-lg text-zinc-400 max-w-xl"
-          >
-            Hands-on Full-Stack Developer with experience building scalable web
-            applications. Strong foundation in modern frontend and backend
-            technologies. Actively expanding expertise in Cybersecurity and
-            AI/ML. Passionate about leveraging cloud computing for secure,
-            high-performance solutions.
-          </motion.p>
-
-            <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="mt-6 text-lg text-zinc-400 max-w-xl"
-          >
-            Successfully Graduated From Manipal University Jaipur...
-          </motion.p>
-        </div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="mt-4 text-lg text-zinc-300"
+        >
+          Successfully graduated from Manipal University Jaipur.
+        </motion.p>
       </div>
     </section>
   );
