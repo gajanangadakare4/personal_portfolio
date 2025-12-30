@@ -29,6 +29,12 @@ const certifications = [
     title: "Certified Information System Security Professional (CISSP)",
     img: "/images/certification/cissp.png",
   },
+
+  {
+    title: "CompTIA Network+",
+    img: "/images/certification/comptia.png",
+  },
+  
   
   
 ];
